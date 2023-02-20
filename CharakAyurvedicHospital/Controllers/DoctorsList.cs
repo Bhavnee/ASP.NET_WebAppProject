@@ -8,5 +8,10 @@ namespace CharakAyurvedicHospital.Controllers
         {
             return View();
         }
+
+        public IActionResult SarbjitInfo()
+        {
+            return View();
+        }
     }
 }
