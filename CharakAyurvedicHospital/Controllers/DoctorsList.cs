@@ -13,5 +13,18 @@ namespace CharakAyurvedicHospital.Controllers
         {
             return View();
         }
+
+        public IActionResult AmarjitInfo()
+        { 
+            return View();
+        }
+        public IActionResult AbhimanyuInfo()
+        {
+            return View();
+        }
+        public IActionResult MridhuInfo()
+        {
+            return View();
+        }
     }
 }
