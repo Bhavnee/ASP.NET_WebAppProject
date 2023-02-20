@@ -4,7 +4,7 @@
 
 namespace CharakAyurvedicHospital.Data.Migrations
 {
-    public partial class nvi : Migration
+    public partial class nvi : Migration 
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
