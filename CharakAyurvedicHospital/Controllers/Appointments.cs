@@ -1,5 +1,4 @@
-﻿
-using CharakAyurvedicHospital.Data;
+﻿using CharakAyurvedicHospital.Data;
 using CharakAyurvedicHospital.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

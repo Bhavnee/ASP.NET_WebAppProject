@@ -26,10 +26,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PatientName)
-                    
-                </td>
+                <td>@Html.DisplayFor(modelItem => item.PatientName)</td>
                 <td>@Html.DisplayFor(modelItem => item.PatienteMail)</td>
                 <td>@Html.DisplayFor(modelItem => item.PatientPhone)</td>
                 <td>@Html.DisplayFor(modelItem => item.Gender)</td>
