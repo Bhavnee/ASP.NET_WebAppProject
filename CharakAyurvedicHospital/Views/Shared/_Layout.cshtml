@@ -29,21 +29,12 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Appointments" asp-action="Create">Appointments</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="text-black dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Services
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Appointments" asp-action="Create">Appointments</a>
-                                    <li><a class="dropdown-item" href="#">Info</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="DoctorsList" asp-action="Index">Doctor's Information</a>
                             </li>
+                            
                         </ul>
                         <partial name="_LoginPartial" />
                         <form class="d-flex mt-3" role="search">

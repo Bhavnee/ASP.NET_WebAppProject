@@ -13,31 +13,32 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-
+                
                 <label asp-for="AreYouNewPatient" class="contro-label">Are you a new patient?</label>
-                <input asp-for="AreYouNewPatient" class="form-control"/> 
+                <input asp-for="AreYouNewPatient" class="form-control" required/> 
+                
                 <span asp-validation-for="AreYouNewPatient" class="text-danger " ></span>
 
                 
                 <label asp-for="PatientName" class="contro-label">Patient Name</label>
-                <input asp-for="PatientName" class="form-control"/>
+                <input asp-for="PatientName" class="form-control" required/>
                 <span asp-validation-for="PatientName" class="text-danger"></span>
              
              
                     <label asp-for="PatienteMail" class="form-label">Email Address</label>
-                    <input asp-for-="PatienteMail" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+                    <input asp-for-="PatienteMail" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required/>
                     <span asp-validation-for="PatienteMail" class="text-danger"></span>
        
 
                 <label asp-for="PatientPhone" class="contro-label">Patient Contact Number</label>
-                <input asp-for="PatientPhone" class="form-control" />
+                <input asp-for="PatientPhone" class="form-control" required />
                 <span asp-validation-for="PatientPhone" class="text-danger"></span>
 
                 <label asp-for="Gender" class="contro-label">Gender</label>
-                <input asp-for="Gender" class="form-control" />
+                <input asp-for="Gender" class="form-control" required />
                 <span asp-validation-for="Gender" class="text-danger"></span><br />
                 
-                </div>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Submit" class="btn btn-primary" />
             </div>

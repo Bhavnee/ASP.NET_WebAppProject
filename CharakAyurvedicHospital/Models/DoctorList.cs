@@ -2,6 +2,8 @@
 {
     public class DoctorList
     {
+        public int id;
+
 
     }
 }
