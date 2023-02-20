@@ -24,9 +24,7 @@ namespace CharakAyurvedicHospital.Controllers
         {
             return View();
         }
-        // POST: Brands/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,PatientName")] Appointment appointment)
@@ -39,7 +37,7 @@ namespace CharakAyurvedicHospital.Controllers
             }
             return View(appointment);
         }
-        // GET: Brands/Edit/5
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Appointments == null)
@@ -54,9 +52,7 @@ namespace CharakAyurvedicHospital.Controllers
             }
             return View(appointment);
         }
-        // POST: Brands/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,PatientName")] Appointment appointment)
@@ -94,9 +90,23 @@ namespace CharakAyurvedicHospital.Controllers
             throw new NotImplementedException();
         }
 
-
-        // GET: Brands/Details/5
         public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null || _context.Appointments == null)
+            {
+                return NotFound();
+            }
+
+            var appointment = await _context.Appointments.FirstOrDefaultAsync(m => m.Id == id);
+            if (appointment == null)
+            {
+                return NotFound();
+            }
+
+            return View(appointment);
+        }
+
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Appointments == null)
             {
@@ -113,36 +123,19 @@ namespace CharakAyurvedicHospital.Controllers
             return View(appointment);
         }
 
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.Appointments == null)
-            {
-                return NotFound();
-            }
-
-            var brand = await _context.Appointments
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (brand == null)
-            {
-                return NotFound();
-            }
-
-            return View(brand);
-        }
-
-        // POST: Brands/Delete/5
+      
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Appointments == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Brands'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Appointments'  is null.");
             }
-            var brand = await _context.Appointments.FindAsync(id);
-            if (brand != null)
+            var appointment = await _context.Appointments.FindAsync(id);
+            if (appointment != null)
             {
-                _context.Appointments.Remove(brand);
+                _context.Appointments.Remove(appointment);
             }
 
             await _context.SaveChangesAsync();

@@ -18,8 +18,6 @@ namespace CharakAyurvedicHospital.Data.Migrations
                     PatienteMail = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PatientPhone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AreYouNewPatient = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Male = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Female = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

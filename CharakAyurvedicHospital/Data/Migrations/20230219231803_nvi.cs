@@ -39,22 +39,12 @@ namespace CharakAyurvedicHospital.Data.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
-                name: "Female",
-                table: "Appointments",
-                type: "nvarchar(max)",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
                 name: "Gender",
                 table: "Appointments",
                 type: "nvarchar(max)",
                 nullable: true);
 
-            migrationBuilder.AddColumn<string>(
-                name: "Male",
-                table: "Appointments",
-                type: "nvarchar(max)",
-                nullable: true);
+            
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -63,17 +53,12 @@ namespace CharakAyurvedicHospital.Data.Migrations
                 name: "AreYouNewPatient",
                 table: "Appointments");
 
-            migrationBuilder.DropColumn(
-                name: "Female",
-                table: "Appointments");
+            
 
             migrationBuilder.DropColumn(
                 name: "Gender",
                 table: "Appointments");
 
-            migrationBuilder.DropColumn(
-                name: "Male",
-                table: "Appointments");
 
             migrationBuilder.AlterColumn<string>(
                 name: "PatienteMail",
