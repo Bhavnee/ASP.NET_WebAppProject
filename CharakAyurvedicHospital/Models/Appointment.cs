@@ -8,9 +8,13 @@ namespace CharakAyurvedicHospital.Models
         
         [Required]
         public String? PatientName { get; set; }
+        [Required]
         public String? PatienteMail { get; set; }
+        [Required]
         public String? PatientPhone { get; set; }
+        [Required]
         public String? Gender { get; set; }
+        [Required]
        
         public String? AreYouNewPatient { get; set; }
     }
