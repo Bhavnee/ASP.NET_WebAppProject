@@ -10,3 +10,5 @@ I have made a controller and views for it that contains an index method and 4 mo
 Reference:
 1. I took the reference of the class code because I was getting stucked at many places and getting errors. I have used the class code for the functionality.
 2. I have used bootstrap for the front-end.
+
+Live Server Link - https://charak.azurewebsites.net
