@@ -1,11 +1,13 @@
 ﻿using CharakAyurvedicHospital.Data;
 using CharakAyurvedicHospital.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 
 namespace CharakAyurvedicHospital.Controllers
 {
+    [Authorize]
     public class AppointmentsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -14,7 +16,7 @@ namespace CharakAyurvedicHospital.Controllers
         {
             _context = context;
         }
-        
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Appointments.ToListAsync());
@@ -89,6 +91,7 @@ namespace CharakAyurvedicHospital.Controllers
             throw new NotImplementedException();
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Appointments == null)
@@ -141,7 +144,7 @@ namespace CharakAyurvedicHospital.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool BrandExists(int id)
+        private bool AppointmentsExists(int id)
         {
             return _context.Appointments.Any(e => e.Id == id);
         }
