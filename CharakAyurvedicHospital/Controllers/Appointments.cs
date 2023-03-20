@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CharakAyurvedicHospital.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Administrator")]
     public class AppointmentsController : Controller
     {
         private readonly ApplicationDbContext _context;
