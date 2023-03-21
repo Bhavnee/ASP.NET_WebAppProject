@@ -63,4 +63,9 @@ app.MapControllerRoute(
 app.MapRazorPages();
 app.UseSession();
 
+app.UseCookiePolicy(new CookiePolicyOptions()
+{
+    MinimumSameSitePolicy = SameSiteMode.Lax
+});
+
 app.Run();
