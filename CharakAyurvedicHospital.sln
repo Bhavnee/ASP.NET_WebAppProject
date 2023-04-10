@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharakAyurvedicHospital", "CharakAyurvedicHospital\CharakAyurvedicHospital.csproj", "{5DEA91A5-506E-4CC7-AAB9-69581D26A248}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharakAyurvedicHospital", "CharakAyurvedicHospital\CharakAyurvedicHospital.csproj", "{5DEA91A5-506E-4CC7-AAB9-69581D26A248}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharakAyurvedicHospitalTest", "CharakAyurvedicHospitalTest\CharakAyurvedicHospitalTest.csproj", "{F93C9BB7-9552-404B-940C-68F28E5404A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5DEA91A5-506E-4CC7-AAB9-69581D26A248}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DEA91A5-506E-4CC7-AAB9-69581D26A248}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DEA91A5-506E-4CC7-AAB9-69581D26A248}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F93C9BB7-9552-404B-940C-68F28E5404A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F93C9BB7-9552-404B-940C-68F28E5404A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F93C9BB7-9552-404B-940C-68F28E5404A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F93C9BB7-9552-404B-940C-68F28E5404A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -39,8 +39,8 @@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" button type="button" class="btn btn-outline-secondary">Edit</a> |</td>
-                    <td><a asp-action="Delete" asp-route-id="@item.Id" button type="button" class="btn btn-outline-danger">Delete</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id" button type="button" class="btn btn-outline-secondary">Edit</a> </td>
+                    <td><a asp-action="Delete" asp-route-id="@item.Id" button type="button" class="btn btn-outline-danger">Delete</a> 
                     </td>
                 }
                 <td><a asp-action="Details" asp-route-id="@item.Id" button type="button" class="btn btn-outline-primary">Details</a> </td>

@@ -23,7 +23,7 @@ namespace CharakAyurvedicHospital.Controllers
         }
         public IActionResult Create()
         {
-            return View();
+            return View("Create");
         }
         
         [HttpPost]
