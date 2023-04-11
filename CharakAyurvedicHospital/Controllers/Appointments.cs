@@ -2,6 +2,7 @@
 using CharakAyurvedicHospital.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -16,16 +17,20 @@ namespace CharakAyurvedicHospital.Controllers
         {
             _context = context;
         }
+
+       
+
         [AllowAnonymous]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Edit(decimal invalidId)
         {
             return View(await _context.Appointments.ToListAsync());
         }
         public IActionResult Create()
         {
-            return View("Create");
+            ViewData["Id"] = new SelectList(_context.Appointments, "Id", "PatientName");
+            
+            return View();
         }
-        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,PatientName")] Appointment appointment)
@@ -34,8 +39,27 @@ namespace CharakAyurvedicHospital.Controllers
             {
                 _context.Add(appointment);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Edit));
             }
+            return View(appointment);
+        }
+
+
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null || _context.Appointments == null)
+            {
+                return NotFound();
+            }
+
+            var appointment = await _context.Appointments.FindAsync(id);
+                
+            if (appointment == null)
+            {
+                return NotFound();
+            }
+
             return View(appointment);
         }
 
@@ -81,7 +105,7 @@ namespace CharakAyurvedicHospital.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Edit));
             }
             return View(appointment);
         }
@@ -92,7 +116,7 @@ namespace CharakAyurvedicHospital.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Create(int? id)
         {
             if (id == null || _context.Appointments == null)
             {
@@ -141,14 +165,18 @@ namespace CharakAyurvedicHospital.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Edit));
         }
 
         private bool AppointmentsExists(int id)
         {
             return _context.Appointments.Any(e => e.Id == id);
         }
-    
-}
+
+        public object Edit()
+        {
+            throw new NotImplementedException();
+        }
+    }
 
 }
